@@ -11,7 +11,7 @@ const AcceptInvitationPage: React.FC = () => {
     // Make an API call to your backend to accept the invitation using the provided token
     const acceptInvitation = async () => {
       try {
-        const response = await axios.put(`http://localhost:5001/api/auth/acceptInvitation`,{
+        const response = await axios.put(`https://wallet-app-backend-yv9d.onrender.com/api/auth/acceptInvitation`,{
             token: token
         },);
         

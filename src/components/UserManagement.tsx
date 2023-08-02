@@ -30,7 +30,7 @@ const UserManagement: React.FC = () => {
               // If the token has expired, log out the user
               handleLogout();
             }
-            const response = await axios.get("http://localhost:5001/api/user",
+            const response = await axios.get("https://wallet-app-backend-yv9d.onrender.com/api/user",
             {
               headers: {
                 "x-auth-token": localStorage.getItem("accessToken")
@@ -60,7 +60,7 @@ const UserManagement: React.FC = () => {
     try {
       // Send a PUT request to toggle the user's status
       await axios.put(
-        `http://localhost:5001/api/user/toggle`,
+        `https://wallet-app-backend-yv9d.onrender.com/api/user/toggle`,
         {
           isActive: !isActive
         },

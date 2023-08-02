@@ -23,7 +23,7 @@ const CreateUserPage: React.FC = () => {
 
   const handleCreateUser = async (values: any) => {
     try {
-      const response = await axios.post("http://localhost:5001/api/auth/signup", values, {
+      const response = await axios.post("https://wallet-app-backend-yv9d.onrender.com/api/auth/signup", values, {
         headers: {
           "x-auth-token": localStorage.getItem("accessToken"),
         },

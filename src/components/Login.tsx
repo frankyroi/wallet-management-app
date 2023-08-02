@@ -23,7 +23,7 @@ const Login: React.FC = () => {
   const handleLogin = async () => {
     // Handle form submission logic here
     try {
-      const response = await axios.post("http://localhost:5001/api/auth/login", { email, password });
+      const response = await axios.post("https://wallet-app-backend-yv9d.onrender.com/api/auth/login", { email, password });
       const { accessToken } = response.data;
       console.log(response.data);
       // Save the token to local storage or session storage for user sessions

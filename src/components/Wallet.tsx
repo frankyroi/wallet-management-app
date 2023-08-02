@@ -53,7 +53,7 @@ const Wallet: React.FC = () => {
               // If the token has expired, log out the user
               handleLogout();
             }
-            const response = await axios.get("http://localhost:5001/api/wallet/getUserAndWalletData",
+            const response = await axios.get("https://wallet-app-backend-yv9d.onrender.com/api/wallet/getUserAndWalletData",
             {
               headers: {
                 "x-auth-token": localStorage.getItem("accessToken")
@@ -74,7 +74,7 @@ const Wallet: React.FC = () => {
 
   const handleDeposit = async (amount: number) => {
     try {
-      await axios.post("http://localhost:5001/api/wallet/deposit", { amount },
+      await axios.post("https://wallet-app-backend-yv9d.onrender.com/api/wallet/deposit", { amount },
       {
         headers: {
           "x-auth-token": localStorage.getItem("accessToken")
@@ -96,7 +96,7 @@ const Wallet: React.FC = () => {
 
   const handleTransfer = async (amount: number, toWalletId: number) => {
     try {
-      await axios.post("http://localhost:5001/api/wallet/transfer", { fromWalletId: WalletData?.id, toWalletId, amount },
+      await axios.post("https://wallet-app-backend-yv9d.onrender.com/api/wallet/transfer", { fromWalletId: WalletData?.id, toWalletId, amount },
       {
         headers: {
           "x-auth-token": localStorage.getItem("accessToken")
@@ -126,7 +126,7 @@ const Wallet: React.FC = () => {
 
   const handleWithdrawal = async (amount: number) => {
     try {
-      await axios.post("http://localhost:5001/api/wallet/withdraw", { fromWalletId: WalletData?.id, amount },
+      await axios.post("https://wallet-app-backend-yv9d.onrender.com/api/wallet/withdraw", { fromWalletId: WalletData?.id, amount },
       {
         headers: {
           "x-auth-token": localStorage.getItem("accessToken")

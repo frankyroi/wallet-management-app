@@ -43,7 +43,7 @@ const WalletTransferModal: React.FC<WalletTransferModalProps> = ({ isOpen, onClo
   const fetchWalletName = async () => {
     try {
       // Make an API call to fetch the wallet name based on the wallet ID
-      const response = await axios.get(`http://localhost:5001/api/wallet/data/${toWalletId}`,{
+      const response = await axios.get(`https://wallet-app-backend-yv9d.onrender.com/api/wallet/data/${toWalletId}`,{
         headers: {
           "x-auth-token": localStorage.getItem("accessToken")
         },
