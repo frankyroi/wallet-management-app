@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, message } from "antd";
-import "./login.css"; // Import the custom CSS file
+import { EyeOutlined, EyeInvisibleOutlined } from "@ant-design/icons"; // Import the eye icons
 import axios from "axios";
 
 interface ApiResponseError {
@@ -19,7 +19,8 @@ const isApiResponseError = (error: any): error is ApiResponseError => {
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  
   const handleLogin = async () => {
     // Handle form submission logic here
     try {
@@ -44,11 +45,14 @@ const Login: React.FC = () => {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-96">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Login</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">Wallet Management</h2>
         <Form onFinish={handleLogin}>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
@@ -77,6 +81,12 @@ const Login: React.FC = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+            <span
+                className="absolute top-2 right-3 cursor-pointer"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
+              </span>
           </div>
           <div className="flex items-center justify-between">
             <button
@@ -93,23 +103,6 @@ const Login: React.FC = () => {
       </div>
     </div>
 
-
-
-    // <div className="login-form"> {/* Apply the custom CSS class here */}
-    //   <Form onFinish={handleSubmit}>
-    //     <Form.Item label="Email">
-    //       <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-    //     </Form.Item>
-    //     <Form.Item label="Password">
-    //       <Input.Password value={password} onChange={(e) => setPassword(e.target.value)} />
-    //     </Form.Item>
-    //     <Form.Item className="">
-    //       <Button type="primary" htmlType="submit" className="justify-center w-40 md:w-64 bg-blue-500 text-white font-bold py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-700">
-    //         Login
-    //       </Button>
-    //     </Form.Item>
-    //   </Form>
-    // </div>
   );
 };
 

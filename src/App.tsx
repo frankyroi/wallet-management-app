@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from "react-router-dom";
-import Login from "./components/Login";
-import Wallet from "./components/Wallet";
-import WalletManagement from "./components/UserManagement";
-import AcceptInvitationPage from "./components/AcceptInvitationPage";
-import CreateUserPage from "./components/CreateUserPage";
+import Login from "./pages/Login";
+import Wallet from "./pages/Wallet";
+import WalletManagement from "./pages/UserManagement";
+import AcceptInvitationPage from "./pages/AcceptInvitationPage";
+import CreateUserPage from "./pages/CreateUserPage";
 import { isAdmin } from "./components/auth";
 
 const App: React.FC = () => {
@@ -25,7 +25,6 @@ const App: React.FC = () => {
       {isLoggedIn() && ( // Only show the navigation when logged in
         <nav className="bg-gray-800 p-4">
           <ul className="flex space-x-4">
-            
             <li>
               <Link to="/wallet" className="text-white hover:text-gray-300">
               Wallet
@@ -44,7 +43,7 @@ const App: React.FC = () => {
               )}
             </li>
             <li>
-              <p onClick={handleLogout} className="text-white hover:text-gray-300">
+              <p onClick={handleLogout} className="text-white hover:text-gray-300 cursor-pointer">
                 Logout
               </p>
             </li>

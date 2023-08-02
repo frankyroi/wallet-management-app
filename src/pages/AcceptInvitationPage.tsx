@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { message } from "antd";
-import { isLoggedIn } from "./auth";
+import { isLoggedIn } from "../components/auth";
 
 const AcceptInvitationPage: React.FC = () => {
   const { token } = useParams<{ token: string }>();

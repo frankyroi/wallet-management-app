@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Table, message, Button  } from "antd";
-import { isTokenExpired } from "./auth";
+import { isTokenExpired } from "../components/auth";
 import axios from "axios";
-import { isAdmin } from "./auth";
+import { isAdmin } from "../components/auth";
 import { Link } from "react-router-dom";
 
 interface UserData {

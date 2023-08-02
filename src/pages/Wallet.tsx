@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { message } from "antd";
-import WalletTransferModal from './WalletTransferModal';
-import WalletWithdrawalModal from './WalletWithdrawalModal';
-import TransactionHistory from "./TransactionHistory";
-import WalletBalance from "./WalletBalance";
-import WalletDepositForm from './WalletDepositForm';
-import { isTokenExpired } from "./auth";
+import WalletTransferModal from '../components/WalletTransferModal';
+import WalletWithdrawalModal from '../components/WalletWithdrawalModal';
+// import TransactionHistory from "../components/TransactionHistory";
+import WalletBalance from "../components/WalletBalance";
+import WalletDepositForm from '../components/WalletDepositForm';
+import { isTokenExpired } from "../components/auth";
 
 interface UserData {
   email: string;
@@ -204,9 +204,9 @@ const Wallet: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-full">
+        {/* <div className="w-full">
           <TransactionHistory />
-        </div>
+        </div> */}
       </main>
       <footer className="bg-blue-500 p-4 text-white text-center">
         Footer content here
